@@ -1,69 +1,194 @@
 <!DOCTYPE html>
 <html lang="hu">
+
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>FootbAnalytics – Tesztelési Dokumentáció</title>
-<style>
-body {
-font-family: Arial, sans-serif;
-margin: 20px;
-line-height: 1.6;
-}
-h1, h2, h3 {
-color: #1a1a1a;
-}
-ul {
-margin-left: 20px;
-}
-.section {
-margin-bottom: 40px;
-}
-.placeholder {
-width: 100%;
-height: 200px;
-border: 2px dashed #aaa;
-display: flex;
-align-items: center;
-justify-content: center;
-color: #666;
-margin: 20px 0;
-}
-</style>
+    <meta charset="UTF-8">
+    <title>FootbAnalytics - Tesztelési Dokumentáció</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 900px;
+            margin: 40px auto;
+            line-height: 1.6;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #333;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        ul {
+            list-style: disc;
+            margin-left: 20px;
+        }
+    </style>
 </head>
+
 <body>
 
+    <h1>FootbAnalytics - Tesztelési Stratégia</h1>
 
-<h1>FootbAnalytics – Tesztelési Dokumentáció</h1>
+    <div class="card">
+        <h2>1. Bevezetés</h2>
+        <p>Ezzel a dokumentummal a FootbAnalytics fejlesztési folyamata a végéhez közeledik. Az alábbi fejezetekben
+            bemutatom a tesztelések jelentőségét, az általános szoftvertesztelési szempontokat, valamint ismertetem a
+            tesztelési folyamatunkat és az ehhez kapcsolódó költségvetést. Mindezek célja, hogy a
+            végfelhasználók—edzők, játékosok, játékvezetők és szurkolók—egy stabil, gyors és megbízható alkalmazást
+            kapjanak.</p>
+    </div>
 
+    <div class="card">
+        <h2>2. A tesztek jelentősége</h2>
+        <p>A tesztelés a fejlesztési folyamat egyik legkritikusabb eleme. Ha az alkalmazás nem esik át megfelelő
+            mélységű, komplex teszteken, számos olyan hiba maradhat benne, amely csak később, éles használat közben
+            derül ki. Ez a felhasználói bizalom csökkenéséhez vezetne, ami hosszú távon komoly hátrányt jelenthetne a
+            FootbAnalytics számára.</p>
+        <p>A stabil, hibamentes működés különösen fontos, hiszen:</p>
+        <ul>
+            <li>az edzők és játékvezetők értékelései valós időben érkezhetnek,</li>
+            <li>a videófeltöltések és statisztikák feldolgozása nagy terhelés alatt zajlik,</li>
+            <li>a nem leigazolt játékosok és edzők közötti kapcsolatfelvétel gördülékenysége bizalmi kérdés.</li>
+        </ul>
+        <p>Egy jól tesztelt rendszer nemcsak a felhasználók elégedettségét növeli, de csökkenti a reklamációk számát és
+            a támogatási költségeket is.</p>
+    </div>
 
-<div class="section">
-<h2>1. Bevezetés</h2>
-<p>Ezzel a dokumentummal a FootbAnalytics fejlesztési folyamata a végéhez közeledik. Az alábbi fejezetekben bemutatom a tesztelések jelentőségét, az általános szoftvertesztelési szempontokat, valamint ismertetem a tesztelési folyamatunkat és az ehhez kapcsolódó költségvetést. Mindezek célja, hogy a végfelhasználók — edzők, játékosok, játékvezetők és szurkolók — egy stabil, gyors és megbízható alkalmazást kapjanak.</p>
-</div>
+    <div class="card">
+        <h2>3. Kezdeti időszak</h2>
+        <p>Annak érdekében, hogy az alkalmazás minden követelménynek megfeleljen, már a fejlesztés legelső fázisától
+            kezdve folyamatos teszteket végzünk. Ennek célja, hogy a kódban lévő hibákat, hiányosságokat vagy
+            tervezési anomáliákat már korán felismerjük és javítsuk.</p>
+        <p>A tesztesetek előre meghatározott inputokból (tesztadatokból) és ezek várható kimeneteiből állnak. A várt
+            eredmények segítségével könnyen eldönthető, hogy az adott funkció megfelelően működik-e vagy további
+            fejlesztést igényel.</p>
+    </div>
 
+    <div class="card">
+        <h2>4. Általános szoftvertesztelési szempontok</h2>
 
-<div class="section">
-<h2>2. A tesztek jelentősége</h2>
-<p>A tesztelés a fejlesztési folyamat egyik legkritikusabb eleme. Ha az alkalmazás nem esik át megfelelő mélységű, komplex teszteken, számos olyan hiba maradhat benne, amely csak később, éles használat közben derül ki. Ez a felhasználói bizalom csökkenéséhez vezetne, ami hosszú távon komoly hátrányt jelenthetne a FootbAnalytics számára.</p>
-<p>A stabil, hibamentes működés különösen fontos, hiszen:</p>
-<ul>
-<li>az edzők és játékvezetők értékelései valós időben érkezhetnek,</li>
-<li>a videófeltöltések és statisztikák feldolgozása nagy terhelés alatt zajlik,</li>
-<li>a nem leigazolt játékosok és edzők közötti kapcsolatfelvétel gördülékenysége bizalmi kérdés.</li>
-</ul>
-<p>Egy jól tesztelt rendszer nemcsak a felhasználók elégedettségét növeli, de csökkenti a reklamációk számát és a támogatási költségeket is.</p>
-</div>
+        <h3>4.1 Funkcionális követelmények tesztelése</h3>
+        <p>A FootbAnalytics-nek a fejlesztés során meghatározott szoftverkövetelmény-specifikáció (SRS) alapján kell
+            működnie. A funkcionális tesztelés során ellenőrizzük:</p>
+        <ul>
+            <li>hogy a felhasználók (edzők, játékosok, játékvezetők, szurkolók) zökkenőmentesen tudnak regisztrálni és
+                bejelentkezni,</li>
+            <li>értékelhetők-e a játékosok és bírók,</li>
+            <li>a mérkőzés videók feltöltése és megtekintése hibamentesen történik-e,</li>
+            <li>a mérkőzés értékelései megfelelően rögzülnek-e,</li>
+            <li>a játékos–edző kapcsolatfelvétel funkció szakszerűen működik-e,</li>
+            <li>az alkalmazás mobilon és különböző operációs rendszereken is stabil.</li>
+        </ul>
+        <p>A felhasználói visszajelzések kiemelten fontosak, ezért bevonjuk a fejlesztőcsapat tagjait és külsős sportági
+            szereplőket is a tesztelésbe. Az észlelt hibákról részletes dokumentáció készül, amely alapján megtörténik a
+            javítás.</p>
 
+        <h3>4.2 Nem funkcionális követelmények tesztelése</h3>
+        <p>A megfelelő felhasználói élmény érdekében az alkalmazás teljesítményét kiemelten vizsgáljuk. A tesztelés
+            során ellenőrizzük:</p>
+        <ul>
+            <li>a válaszidők minimalizálását,</li>
+            <li>a videófeltöltések és adatfeldolgozások stabilitását,</li>
+            <li>az adatbázis integritását,</li>
+            <li>a biztonsági protokollok hatékonyságát (adatvédelem, illetéktelen hozzáférés megakadályozása),</li>
+            <li>az automatikus mentések és visszaállítások működését váratlan leállás esetén.</li>
+        </ul>
+        <p>A rendszernek garantálnia kell, hogy adatvesztés nélkül működjön, és egy hiba során képes legyen visszatérni
+            az utolsó sikeres állapothoz.</p>
 
-<div class="section">
-<h2>3. Kezdeti időszak</h2>
-<p>Annak érdekében, hogy az alkalmazás minden követelménynek megfeleljen, már a fejlesztés legelső fázisától kezdve folyamatos teszteket végzünk. Ennek célja, hogy a kódban lévő hibákat, hiányosságokat vagy tervezési anomáliákat már korán felismerjük és javítsuk.</p>
+        <h3>4.3 Karbantartás</h3>
+        <p>A regressziós tesztelés célja annak ellenőrzése, hogy egy új fejlesztés vagy frissítés nem rontja-e el a már
+            jól működő funkciókat. Mivel a FootbAnalytics a jövőben rendszeresen kap frissítéseket (új statisztikai
+            modulok, AI-elemzés, új értékelési rendszer stb.), fontos:</p>
+        <ul>
+            <li>a kompatibilitás megőrzése újabb eszközökkel és operációs rendszerekkel,</li>
+            <li>hibák esetén a korábbi stabil verziók ideiglenes visszaállítása,</li>
+            <li>a teljes rendszer folyamatos frissítése és karbantartása.</li>
+        </ul>
+    </div>
 
+    <div class="card">
+        <h2>5. A tesztelés menete</h2>
+        <p>A tesztelési folyamat a szoftvertesztelés jól ismert, egymásra épülő szakaszaiból áll, a legkisebb egységektől
+            (unit) haladva a teljes rendszer végfelhasználói ellenőrzéséig.</p>
+        
+        <h3>5.1 Komponens teszt</h3>
+        <p>Ebben a fázisban az alkalmazás legkisebb egységeit vizsgáljuk:</p>
+        <ul>
+            <li><strong>Unit tesztek:</strong> azt ellenőrizzük, hogy az egyes függvények, metódusok helyes bemenet
+                esetén helyes kimenetet adnak.</li>
+            <li><strong>Modultesztek:</strong> vizsgáljuk az adott modulok teljesítményét, memóriakezelését és
+                esetleges szűk keresztmetszeteit (pl. videófeldolgozó modul, értékelési modul).</li>
+        </ul>
 
-<div class="placeholder">KÉP HELYE – tesztelési folyamatábra</div>
+        <h3>5.2 Integrációs teszt</h3>
+        <p>Ekkor azt vizsgáljuk, hogyan működnek együtt a különálló komponensek:</p>
+        <ul>
+            <li>az értékelési modul összeköttetése a felhasználói profilokkal,</li>
+            <li>a videófeltöltés kapcsolódása az adatbázishoz,</li>
+            <li>az üzenetküldő rendszer működése a játékosok és edzők között.</li>
+        </ul>
+        <p>Cél: hogy ne forduljanak elő váratlan akadozások vagy inkompatibilitási problémák.</p>
 
+        <h3>5.3 Hálózati teszt</h3>
+        <p>Elsősorban a szerver és a felhasználói eszközök közötti kommunikációt vizsgáljuk:</p>
+        <ul>
+            <li>nagy terhelés esetén is stabil marad-e az alkalmazás,</li>
+            <li>előfordulhat-e adatvesztés,</li>
+            <li>megfelelően működnek-e az üzenetek, videók és értékelések továbbításának folyamatai.</li>
+        </ul>
 
-<p>A tesztesetek előre meghatározott inputokból (tesztadatokból) és ezek várható kimeneteiből állnak. A várt eredmények segítségével könnyen eldönthető, hogy az adott funkció megfelelően működik‑e vagy további fejlesztést igényel.</p>
-</div>
+        <h3>5.4 Szerverteszt</h3>
+        <p>Ez a rész az adatbáziskezelésért és a háttérfolyamatokért felelős szerverkódot vizsgálja. Ellenőrizzük,
+            hogy:</p>
+        <ul>
+            <li>a rendszer elbírja-e a váratlanul magas felhasználószámot (pl. hétvégi mérkőzések idején),</li>
+            <li>a tömeges videófeltöltések nem okoznak-e hibát vagy lassulást,</li>
+            <li>biztonságos-e az adattárolás.</li>
+        </ul>
 
+        <h3>5.5 Alfa teszt</h3>
+        <p>Az alfa teszt során az alkalmazást egy szűkebb kör használja:</p>
+        <ul>
+            <li>edzők,</li>
+            <li>játékvezetők,</li>
+            <li>néhány regisztrált focista,</li>
+            <li>fejlesztők.</li>
+        </ul>
+        <p>Cél: a funkciók finomhangolása, hibák feltárása és a felhasználói élmény javítása.</p>
+
+        <h3>5.6 Béta teszt</h3>
+        <p>Ez a teszt már szélesebb közönség számára nyitott, általában 1–2 hétig tart. A cél:</p>
+        <ul>
+            <li>a ritka, speciális hibák felderítése,</li>
+            <li>a nagy tömegű felhasználói adat vizsgálata,</li>
+            <li>a felhasználói visszajelzések összegyűjtése.</li>
+        </ul>
+        <p>A béta teszt során olyan problémák is előkerülhetnek, amelyekre fejlesztés közben nem gondoltunk.</p>
+    </div>
+
+    <div class="card">
+        <h2>6. Tesztelési költségek</h2>
+        <p>A tesztelés költségei várhatóan mérsékeltek lesznek. A fejlesztés közbeni teszteket a FootbAnalytics fejlesztői
+            csapata végzi el, akiknek díjazását a projekt későbbi bevételeiből fedezzük.</p>
+        <p>Az alfa és béta tesztekhez szükséges külsős tesztelők—elsősorban amatőr futballisták, edzők, játékvezetők és
+            szurkolók—többsége várhatóan önként, díjazás nélkül vesz részt a folyamatban. Ők érdekeltek az alkalmazás
+            sikerében, hiszen számukra készült a rendszer.</p>
+        <p>Azoknak a felhasználóknak, akik semmilyen kapcsolódással nem rendelkeznek a futballcsapatokhoz, és önként nem
+            jelentkeznének tesztelésre, 1000 Ft tesztelési díjat ajánlunk fel fejenként, hogy szélesebb körű
+            visszajelzést kapjunk.</p>
+    </div>
+
+</body>
+
+</html>
